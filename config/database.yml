@@ -1,0 +1,30 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  user: <%= ENV["FOOD_USERNAME"] %>
+  password: <%= ENV["FOOD_PASSWORD"] %>
+  host: <%= ENV["FOOD_HOSTNAME"]  %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  port: <%= ENV["FOOD_PORT"] %>
+  wait_timeout: 900 # 15 minutes.
+  timeout: 5000 # 5 seconds.
+
+development:
+  <<: *default
+  database: food_development
+
+qa:
+  <<: *default
+  database: food_qa
+
+uat:
+  <<: *default
+  database: food_uat
+
+test:
+  <<: *default
+  database: food_test
+
+production:
+  <<: *default
+  database: food
