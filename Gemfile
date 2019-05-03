@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.4'
+gem 'rails', '~> 5.2.2'
 gem 'ransack'
 gem 'geocoder', '~> 1.5', '>= 1.5.1'
 gem 'active_model_serializers', '~> 0.10.2'
